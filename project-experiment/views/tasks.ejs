@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List</title>
+</head>
+<body>
+  <h1>Task List</h1>
+
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li>
+        <%= task.description %>
+        <form method="post" action="/tasks/<%= task.id %>?_method=DELETE" style="display: inline;">
+          <button type="submit">Delete</button>
+        </form>
+        
+      </li>
+    <% }); %>
+  </ul>
+
+  <a href="/tasks/new">Add New Task</a>
+</body>
+</html>
